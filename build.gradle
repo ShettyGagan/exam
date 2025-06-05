@@ -1,5 +1,6 @@
 plugins {
-    id 'java'
+    id 'application'
+
 }
 
 group = 'com.example'
@@ -16,4 +17,13 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+application {
+    mainClass = "com.example.Main"
+}
+
+tasks.register('copyWebsite',Copy) {
+    from 'src/main/resources/website'
+    into 'docs'
 }
